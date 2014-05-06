@@ -159,7 +159,7 @@ public class GraphiteWriter extends BaseOutputWriter {
 						if (JmxUtils.isNumeric(value)) {
 							StringBuilder sb = new StringBuilder();
 
-							sb.append(JmxUtils.getKeyString(query, result, values, typeNames, rootPrefix).replaceAll("[()]", "_"));
+							sb.append(JmxUtils.getKeyString(query, result, values, typeNames, rootPrefix).replaceAll("[()]", "_").replaceAll("\\$Iface", ""));
 
 							sb.append(" ");
 							sb.append(value.toString());
